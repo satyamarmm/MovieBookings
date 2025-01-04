@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup & Login Form</title>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/295/295128.png" type="image/x-icon">
+  <style>
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+    .hidden {
+      display: none;
+    }
+    body{
+        background-color: #e69cd1;
+    }
+.forms{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+   margin-left: 350px;
+   margin-top: 80px;
+    box-shadow: 10px 10px 55px #4c2d44;
+}
+#signupForm{
+   
+    background-color: rgb(255, 255, 255);
+    color: rgb(163, 159, 159);
+    border: none;
+    height: 425px;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-top: 125px;
+}
+#loginForm{
+    background-color: rgb(255, 255, 255);
+    color: rgb(163, 159, 159);
+    border: none;
+    height: 550px;
+    width: 400px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+img{
+  height:550px;
+   width:450px;
+  }
+
+@media screen and (max-width: 525px) {
+ .forms{
+  margin-bottom: 500px;
+  display: flex;
+    flex-direction: row;
+    width: 800px;
+   margin-left: 0px;
+   margin-top: 0px;
+ }
+ /* img{
+  height:550px;
+   width:450px;
+   margin-left: 0px;
+  }
+  #signupForm{
+    height: 425px;
+    width: 400px;
+  }
+  #loginForm{
+    height: 550px;
+    width: 400px;
+  } */
+
+}
+
+  </style>
+</head>
+<body>
+  
+  <div class="forms">
+    <img src="./Images/logoin.png" alt="">
+    <form id="signupForm" >
+        <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: #c551a4;">Signup Form!</h2>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <small id="usernameError" class="error"></small><br><br>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <small id="emailError" class="error"></small><br><br>
+    
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <small id="passwordError" class="error"></small><br><br>
+    
+        <button type="submit" style="background-color: #e69cd1; height: 35px; width: 120px; border: none; border-radius: 7.5px; font-family:monospace;">SIGN UP</button>
+      </form>
+    
+      
+      <form id="loginForm" class="hidden" >
+        <h2 style="font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: #c551a4;">Login Form!</h2>
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required>
+        <small id="loginEmailError" class="error"></small><br><br>
+    
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required>
+        <small id="loginPasswordError" class="error"></small><br><br>
+    
+        <button type="submit" style="background-color: #e69cd1; height: 35px; width: 120px; border: none; border-radius: 7.5px; font-family:monospace;">Login</button>
+      </form>
+  </div>
+
+  <script>
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const usernameRegex = /^[A-Za-z]{3,}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(){}:"><?~"])[a-zA-Z0-9!@#$%^&*(){}:"><?~"]{8,}$/;
+
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("usernameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+      const username = document.getElementById("username").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      let isValid = true;
+
+      if (!usernameRegex.test(username)) {
+        document.getElementById("usernameError").textContent = "Username must be at least 3 letters long and contain no numbers.";
+        isValid = false;
+      }
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email address.";
+        isValid = false;
+      }
+      if (!passwordRegex.test(password)) {
+        document.getElementById("passwordError").textContent = "Password must be 8 characters long, with 2 lowercase, 2 uppercase, 2 digits, and 2 symbols.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userPassword", password);
+        alert("Signup Successful!");
+        document.getElementById("signupForm").classList.add("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+      }
+    });
+
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      document.getElementById("loginEmailError").textContent = "";
+      document.getElementById("loginPasswordError").textContent = "";
+      const loginEmail = document.getElementById("loginEmail").value.trim();
+      const loginPassword = document.getElementById("loginPassword").value.trim();
+      const storedEmail = localStorage.getItem("userEmail");
+      const storedPassword = localStorage.getItem("userPassword");
+      let isLoginValid = true;
+
+      if (loginEmail !== storedEmail) {
+        document.getElementById("loginEmailError").textContent = "Email not found. Please sign up first.";
+        isLoginValid = false;
+      }
+      if (loginPassword !== storedPassword) {
+        document.getElementById("loginPasswordError").textContent = "Incorrect password.";
+        isLoginValid = false;
+      }
+
+      if (isLoginValid) {
+        alert("Login Successful!");
+        location.href="AmarCinemas.html"
+      }
+    });
+  </script>
+</body>
+</html>
+

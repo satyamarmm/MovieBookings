@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Cart</title>
+    <link rel="shortcut icon" href="https://e1.pngegg.com/pngimages/974/699/png-clipart-movies-and-popcorn-folder-icon-movies-thumbnail.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .background-container {
+            height: 325px;
+            width: 215px;
+            background-size: cover;
+            background-position: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .cart-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 25px;
+        }
+
+        .whole {
+            display: grid;
+            grid-column: auto;
+            border: rgb(157, 154, 154) solid ;
+            border-radius: 35px; 
+            border: none;
+            height: 495px;
+            width: 600px;
+            box-shadow: 20px 20px 65px rgb(103, 100, 100);
+           
+        }
+
+        .all {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            margin-top: 7.5px;
+        }
+
+        .end {
+            margin-left: 35vw;
+        }
+
+        #b {
+            background-color:#8174A0;
+            color: white;
+            font-size: 20px;
+            border: none;
+            margin-left: 45vw;
+            
+        }
+
+        #movie-title {
+            color: #FF0000;
+            font-size: 27.5px;
+            padding-left: 35px;
+            margin-top: -35px;
+        }
+
+        #ab1 {
+            font-size: 25px;
+            padding-left: 35px;
+        }
+
+        #total-amount {
+            color: gray;
+            font-size: 45px;
+        }
+
+        #pp1 {
+            font-size: 30px;
+            color: #544f4f;
+            padding-left: 105px;
+        }
+
+        #pp2 {
+            font-size: 30px;
+            color: #544f4f;
+        }
+
+        #pp3 {
+            padding-left: 45px;
+            color: rgb(199, 189, 189);
+            font-size: 25px;
+        }
+
+        #selected-seats {
+            font-size: 40px;
+            color: rgb(199, 189, 189);
+        }
+
+        #ticket-count {
+            font-size: 50px;
+            color: rgb(121, 121, 123);
+            margin-left: 75px;
+        }
+
+        #pp4 {
+            font-size: 35px;
+        }
+
+        #pp5 {
+            color: grey;
+            font-size: 45px;
+            padding-left: 20px;
+        }
+
+        #pp6 {
+            padding-left: 50px;
+        }
+
+        #selected-time {
+            color: rgb(65, 62, 62);
+            font-size: 25px;
+            padding-left: 10.5px;
+        }
+
+        #selected-date {
+            color: rgb(65, 62, 62);
+            font-size: 35px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-left: 30.5px;
+        }
+
+        #selected-day {
+            color: rgb(19, 19, 19);
+            font-size: 35px;
+            padding-left: 5px;
+        }
+
+        #pp7 {
+            font-size: 45px;
+            color: black;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+
+            .background-container {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                display: block;
+                width: 215px;
+                height: 325px;
+            }
+
+            .whole {
+                box-shadow: none;
+                border: 2px solid black;
+            }
+
+            /* #b {
+                display: none;
+            } */
+
+            button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="b" onclick="back()">Home</button>
+    <br>
+    <div class="all" id="content">
+        <div class="whole">
+            <div class="cart-container">
+                <div id="background" class="background-container"></div>
+                <div class="cart-details">
+                    <p><span id="movie-title"></span></p>
+                    <p><strong id="ab1">Amount</strong> ₹.<span id="total-amount"></span></p>
+                    <p>
+                        <span>
+                            <span id="selected-date"></span>
+                            <span id="selected-day"></span>
+                            <span id="pp7">|</span>
+                        </span>
+                        <span><span id="selected-time"></span></span> <br><br>
+                        <div id="pp6">
+                            <span id="date"></span> <span id="data"></span>:<span id="datb"></span>:<span id="datc"></span>
+                        </div>
+                    </p>
+                </div>
+            </div>
+            <div id="pp5">--------------------------------------</div>
+            <div class="seats">
+                <span><span id="ticket-count"></span> <span id="pp4">tickets</span></span>
+                <span>
+                    <strong id="pp3">Seats DRESS. </strong> <span id="selected-seats"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <p id="pp1">Congrats !!!</p>
+        <p id="pp2">Your ticket has been booked</p>
+    </div>
+    
+    <button onclick="window.print()">Print this page</button>
+
+    <script>
+        // Retrieve details from localStorage
+        const cartData = JSON.parse(localStorage.getItem("cartData"));
+        const backgroundUrl = localStorage.getItem("backgroundUrl");
+
+        if (cartData) {
+            document.getElementById("ticket-count").innerText = cartData.count;
+            document.getElementById("total-amount").innerText = cartData.amount;
+            document.getElementById("selected-date").innerText = cartData.date;
+            document.getElementById("selected-day").innerText = cartData.day;
+            document.getElementById("selected-time").innerText = cartData.time;
+
+            const d = new Date();
+            document.getElementById("date").innerHTML = d.toDateString();
+            const e = new Date();
+            document.getElementById("data").innerHTML = e.getHours();
+            const f = new Date();
+            document.getElementById("datb").innerHTML = f.getMinutes();
+            const g = new Date();
+            document.getElementById("datc").innerHTML = g.getMilliseconds();
+
+            document.getElementById("movie-title").innerText = cartData.movieTitle;
+            document.getElementById("selected-seats").innerText = cartData.seats.join(", ");
+        } else {
+            alert("No booking data found!");
+        }
+
+        if (backgroundUrl) {
+            const backgroundElement = document.getElementById("background");
+            backgroundElement.style.backgroundImage = `url('${backgroundUrl}')`;
+        } else {
+            console.error("No background URL found in localStorage.");
+        }
+
+        function back() {
+            setTimeout(() => {
+                confirm("Returning Back");
+                window.location.href = "AmarCinemas.html";
+            }, 4000);
+        }
+    </script>
+</body>
+
+</html>

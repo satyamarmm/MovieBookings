@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2798/2798007.png" type="image/x-icon">
+    
+    <title>Movies Tickets, Plays, Sports, Events</title>
+</head>
+<style>
+    body{
+        background-color:#D4BEE4 ;
+    }
+    header{
+       margin-left: 100px;
+       margin-right: 100px;
+       margin-top: 20px;
+       background-color:#D4BEE4;
+       height: 70px;
+       display: flex;
+       flex-direction: row;
+       text-align: center;
+       align-items: center;
+   }
+   .slides{
+       margin-bottom: 20px;
+   }
+   
+   footer {
+       margin-top: 50px;
+           background-color: #5d5d61;
+           color: #ffffff;
+           padding: 40px 0;
+       }
+
+       footer a {
+           color: #f8d210;
+           text-decoration: none;
+       }
+
+       footer a:hover {
+           text-decoration: underline;
+       }
+
+       .social-icons a {
+           color: white;
+           font-size: 20px;
+           margin-right: 15px;
+           transition: color 0.3s ease;
+       }
+
+       .social-icons a:hover {
+           color: #f8d210;
+       }
+
+       .newsletter-input {
+           background-color: #495057;
+           border: none;
+           color: white;
+       }
+
+       .newsletter-input:focus {
+           outline: none;
+           box-shadow: 0 0 5px #f8d210;
+       }
+
+       .footer-bottom {
+           border-top: 1px solid #495057;
+           text-align: center;
+           margin-top: 30px;
+           padding-top: 20px;
+           color: #94979a;
+       }
+       #c2{
+           height: 300px;
+           width: 300px; 
+           border-radius: 20px;
+       }
+       #c1{
+           display: flex;
+           flex-direction: row;
+           gap: 105px;
+           margin-left: 200px;
+           margin-right: 50px;
+       }
+#card{
+ 
+ color: rgb(12, 12, 12);
+ border-radius: 10px;
+ 
+}#imgdiv{
+    background-color: #070707;
+    height: 395px;
+    color: white;
+    border-radius: 10px 10px 10px;
+}
+.adiv{
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+color: black;
+ text-align: center;
+ gap:25px;
+ margin-left: 125px;
+ margin-right: 75px;
+ border-radius: 10px;
+}
+#b{
+        background-color: #dc4040;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        margin-left: 210px;
+        text-align: center;
+        align-items: center;
+        height: 35px;
+        width: 75px;
+    }
+    #demo{
+        margin-top: 25px;
+        margin-bottom: 25px;
+        margin-left: 40px;
+        border: none;
+    }
+
+    /* location bar */
+    .location-selector{
+        margin-left: 20px;
+        border: none;
+        background-color: none;
+    }.dropdown{
+        border: none;
+    }
+
+
+
+
+        /* .btn {
+            padding: 10px 20px;
+            background-color: #2dcc6f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        } */
+
+
+/* dropdown */
+
+.location-selector {
+    position: relative;
+    width: 250px;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-button {
+    width: 120px;
+    padding: 10px 15px;
+    margin-left: 285px;
+    color: white;
+    border: none;
+    background-color: #D4BEE4;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+}
+
+.dropdown-button:hover {
+    background-color: #bd9ed3;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.search-box {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.location-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.location-item:hover {
+    background-color: #f0f0f0;
+}
+
+.location-item:last-child {
+    border-bottom: none;
+}
+
+.navbars{
+  background-color:#c7a9dc ;
+ font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ display: flex;
+ gap: 40.5px;
+ font-size: 18px;
+}
+#s2{
+  padding-left: 700px;
+  background-color: none;
+  border: none;
+  background-color:#c7a9dc ;
+}
+#s1{
+  padding-left: 100px;
+  background-color: none;
+  border: none;
+  background-color:#c7a9dc ;
+}
+#s{
+  background-color: none;
+  border: none;
+  background-color:#c7a9dc ;
+}
+#img11{
+  height: 150px; width: 1050px; margin-left: 230px;
+}
+#seach{
+border: none solid 0.2px; 
+border-radius: 2px;
+ margin-left: 100px;
+ width: 500px;
+
+}
+
+@media only screen and (max-width: 450px) {
+    /* Body styling */
+    body {
+        background-color: #D4BEE4;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header */
+    header {
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;
+        height: auto;
+        text-align: center;
+    }
+    
+    header img {
+        margin: 0 auto;
+    }
+
+    header input#seach {
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    header .location-selector {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    header button#b {
+        margin: 10px auto;
+        width: 100px;
+        height: 35px;
+    }
+
+    /* Navbar */
+    .navbars {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .navbars button {
+        width: 90%;
+        margin: 5px auto;
+        font-size: 16px;
+    }
+
+    /* Carousel */
+    #demo img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Movie section */
+    .adiv {
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .adiv img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    #imggg img {
+        width: 100%;
+        height: auto;
+        margin: 10px auto;
+    }
+
+    /* Culture section */
+    .culture h3 {
+        text-align: center;
+    }
+
+    #c1 {
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 15px;
+    }
+
+    #c1 img {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 20px;
+    }
+
+    footer .col-md-4 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    footer .social-icons a {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    footer .footer-bottom {
+        font-size: 14px;
+    }
+
+    /* Card */
+    #card {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+
+    /* Dropdown */
+    .location-selector {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .dropdown-button {
+        width: 90%;
+        padding: 10px 15px;
+        margin-left: 0;
+        font-size: 16px;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        position: static;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: none;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    /* Location items */
+    .location-item {
+        padding: 10px 15px;
+        cursor: pointer;
+        border-bottom: 1px solid #eee;
+    }
+
+    .location-item:hover {
+        background-color: #f0f0f0;
+    }
+
+    .location-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Hide Offers Button */
+    .cls {
+        display: none;
+    }
+
+    /* Improve button spacing for better mobile view */
+    #s1, #s, #s2 {
+        padding-left: 0;
+        margin: 0;
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Adjust carousel indicators for mobile */
+    .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        margin: 0 5px;
+    }
+
+    /* Footer layout for smaller screens */
+    footer .container {
+        padding: 10px;
+    }
+
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .col-md-4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    footer .social-icons {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    footer .social-icons a {
+        font-size: 20px;
+        margin-right: 15px;
+    }
+
+    footer .footer-bottom {
+        font-size: 12px;
+    }
+
+    /* Adjust image sizes */
+    #img11 {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
+
+    #c2 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+
+</style>
+
+
+<header id="header">
+    <img src="./Images/pngegg.png" height="67.5" width="110" alt="" style="margin-left: 50px;">
+    <input type="text" id="seach" list="moviess" placeholder="Search  for Movies, Plays, Sports And Activities..." >
+      <datalist id="moviess">
+        <option value="salaar">
+      </datalist>
+      <span>
+        <div class="location-selector">
+            <div class="dropdown">
+                <button id="dropdownButton" class="dropdown-button">Select  Location <p>I will display &#11167;</p><i class="fa-sharp-duotone fa-solid fa-angle-down"></i> </button>
+                
+                <div id="dropdownMenu" class="dropdown-menu">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Search location...">
+                    </div>
+                    <ul id="locationList">
+                        <li class="location-item">Hyderbad</li>
+                        <li class="location-item">Mumbai</li>
+                        <li class="location-item">Delhi</li>
+                        <li class="location-item">Bengaluru</li>
+                        <li class="location-item">Chennai</li>
+                        <li class="location-item">Kolkata</li>
+                        <li class="location-item">Pune</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </span>
+      <button type="submit" onclick="log()" id="b">Log out</button>
+
+</header>
+
+<div class="navbars">
+   <button id="s1" href="#mm" >Movies</button>
+   <button id="s" onclick="stream()">Streams</button>
+   <button id="s" onclick="sport()">Sports</button>
+   <button id="s" onclick="upcoming()">Upcomming Movies</button>
+   <button id="s2" onclick="offer()" class="cls">Offers</button>
+   <button id="s" onclick="gifts()">Gift Cards</button>
+</div>
+
+</div>
+
+
+<body>
+    
+    <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://originserver-static1-uat.pvrcinemas.com/pvrcms/movie_h/13396_FmzB9dlJ.jpg"  alt="Los Angeles" >
+      </div>
+      <div class="carousel-item">
+        <img src="https://originserver-static1-uat.pvrcinemas.com/pvrcms/movie_h/13374_giGIV0eK.jpg" alt="Chicago" >
+      </div>
+      <div class="carousel-item">
+        <img src="https://originserver-static1-uat.pvrcinemas.com/pvrcms/movie_h/13221_DZMvkZ3o.jpg" alt="New York" >
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  <br> <br>
+  <h3 style="font-family:Verdana, Geneva, Tahoma, sans-serif; padding-left: 140px;">In Cinemas</h3> <br>
+    <adiv class="adiv" id="mm"></adiv>
+
+   <a href="./data.html" id="imggg" > <img src="./Images/cinemabeyound_banner.jpg" 
+   id="img11" alt=""></a>
+
+     <br>
+     <br>
+    <div class="culture">
+        <h3 style="margin-left: 150px;">Best Of Your Live Events</h3> <br>
+        <div id="c1">
+           <a href="https://insider.in/comedy-in-hyderabad"><img src="https://img.pikbest.com/origin/06/20/08/182pIkbEsTgM9.jpg!sw800" alt="" id="c2" ></a> 
+            <a href="https://hydkidsfair.com/"><img src="https://marketplace.canva.com/EAF0XZtpEBo/3/0/1131w/canva-colorful-creative-kids-workshop-poster-i2VUlw_FqIs.jpg" alt="" id="c2"></a>
+            <a href="https://www.bryanadams.com/tours/india-2024/"><img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/live-music-show-flyer-template-design-f77804e448694840412658529d1eefdf_screen.jpg?ts=1636986203" alt="" id="c2"></a>
+        </div>
+    </div>
+
+    <footer class="text-light">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5 style="font-family:fantasy;">About Us</h5> <br> 
+                    <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Discover the world of <b>Amar Cinemas</b> with the latest 4DX Screens with Dolby Atoms 7.1 Channel, trailers, and insights into the film industry. Join us on our journey into the movies!</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4">
+                    <h5>More Info Links </h5>  <br>
+                    <ul class="list-unstyled">
+                        <li><a href="#now-showing">Now Showing</a></li>
+                        <li><a href="#upcoming-movies">Upcoming Movies</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+                </div>
+               
+
+                <!-- Newsletter and Social Media -->
+                <div class="col-md-4">
+                    <h5>Stay Updated</h5>
+                    <form>
+                        <div class="mb-3">
+                            <input type="email" class="form-control newsletter-input" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-sm">Subscribe</button>
+                    </form>
+                    <h5 class="mt-3">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amar's Cinemas MovieWorld. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+</body>
+
+<script>
+// HTML element references
+let shop = [
+  {
+    id: 1,
+    Title: "Salaar:Cease Fire-Part 1",
+    rating: "&#11088;935.73 K votes",
+    genre: "Action/Thriller",
+    Poster: "https://pbs.twimg.com/media/GDEdryuaYAAag6j?format=jpg&name=4096x4096"
+  },
+  {
+    id: 2,
+    Title: "Puspha The Rule",
+    rating: "&#11088;650.3 K votes",
+    genre: "Drama/Action",
+    Poster: "https://pbs.twimg.com/media/Gd3axsRbMAAY-w7?format=jpg&name=4096x4096"
+  },
+  {
+    id: 3,
+    Title: "Kanguva",
+    rating: "&#11088;105.3 K votes",
+    genre: "Action/Fantasy",
+    Poster: "https://pbs.twimg.com/media/GcSab0laAAAP3vY?format=jpg&name=large"
+  },
+  {
+    id: 4,
+    Title: "KA",
+    rating: "&#11088;8.2/10",
+    genre: "Action/Drama/",
+    Poster: "https://pbs.twimg.com/media/Gc91emjWwAAH-Ot?format=jpg&name=large"
+  },
+  {
+    id: 5,
+    Title: "Venom TheLastDance",
+    rating: "&#11088;7.0/10",
+    genre: "Superhero/Adventure/Sci-Fi",
+    Poster: "https://pbs.twimg.com/media/GPJpL7yXQAACtTu?format=jpg&name=medium"
+  },
+  {
+    id: 6,
+    Title: "Devara Part-1",
+    rating: "&#11088;8.0/10",
+    genre: "Action/Thriller",
+    Poster: "https://pbs.twimg.com/media/GYbSxLobIAA7Glp?format=jpg&name=4096x4096"
+  },
+  {
+    id: 7,
+    Title: "Mufasa The Lion King",
+    rating: "&#128077;  191.6K Likes",
+    genre: "Adventure/Musical",
+    Poster: "https://pbs.twimg.com/media/GeImIPJWIAEiXdB?format=jpg&name=large"
+  },
+  {
+    id: 8,
+    Title: "Kalki 2898AD",
+    rating: "&#11088;980.38 K votes",
+    genre: "Action & Adventure, Sci-Fi",
+    Poster: "https://pbs.twimg.com/media/GDn05CVbYAAXW8m?format=jpg&name=4096x4096"
+  },
+];
+
+// Reference to the search input field
+let searchedInput = document.getElementById("seach");
+
+// Reference to the container where movie cards are displayed
+let container = document.querySelector(".adiv");
+
+// Function to display all movies
+function displayMovies(movies) {
+  container.innerHTML = ""; // Clear the container
+  movies.forEach(x => {
+    container.innerHTML += `
+      <div id="card">
+        <button class="btn" onclick="navigate(${x.id})">
+          <div id="imgdiv">
+            <img src="${x.Poster}" id="imgp" width="285px" height="370px">
+            <p>${x.rating}</p>
+          </div>
+          <p>${x.Title}</p>
+          <p>${x.genre}</p>
+        </button>
+      </div>`;
+  });
+}
+
+// Initial display of all movies
+displayMovies(shop);
+
+// Event listener for the search bar
+searchedInput.addEventListener("input", (e) => {
+  let searchTerm = e.target.value.toLowerCase();
+  let filteredMovies = shop.filter(movie => movie.Title.toLowerCase().includes(searchTerm));
+  displayMovies(filteredMovies);
+});
+
+// Function to navigate to movie-specific pages
+function navigate(id) {
+  switch(id) {
+    case 1:
+      alert("salaar movie bookings");
+      window.location.href = "salaarBookings.html"; 
+      break;
+    case 2:
+      alert("puspha movie bookings");
+      window.location.href = "puspha.html";
+      break;
+    case 3:
+      alert("kanguva movie bookings");
+      window.location.href = "kanguva.html";
+      break;
+    case 4:
+      alert("ka movie bookings");
+      window.location.href = "ka.html";
+      break;
+    case 5:
+      alert("venom movie bookings");
+      window.location.href = "venom.html";
+      break;
+    case 6:
+      alert("devara movie bookings");
+      window.location.href = "devara.html";
+      break;
+    case 7:
+      alert("mufasa the lion king movie bookings");
+      window.location.href = "lion.html";
+      break;
+    case 8:
+      alert("kalki movie bookings");
+      window.location.href = "kalki.html";
+      break;
+    default:
+      alert(" bookings");
+      window.location.href = "default.html";
+  }
+} 
+function click(){
+      window.location.href="movie.html";
+    }
+    
+
+ // Selecting elements
+const dropdownButton = document.getElementById('dropdownButton');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const searchInput = document.getElementById('searchInput');
+const locationList = document.getElementById('locationList');
+const locationItems = document.querySelectorAll('.location-item');
+
+// Function to load saved location from localStorage
+function loadSavedLocation() {
+    const savedLocation = localStorage.getItem('selectedLocation');
+    if (savedLocation) {
+        dropdownButton.textContent = savedLocation;
+    }
+}
+
+// Load the saved location when the page loads
+loadSavedLocation();
+
+// Toggle dropdown visibility
+dropdownButton.addEventListener('click', () => {
+    dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close the dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+    }
+});
+
+// Filter locations based on search input
+searchInput.addEventListener('input', () => {
+    const filter = searchInput.value.toLowerCase();
+    locationItems.forEach(item => {
+        if (item.textContent.toLowerCase().includes(filter)) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
+
+// Handle location selection
+locationItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const selectedLocation = item.textContent;
+        dropdownButton.textContent = selectedLocation;
+        dropdownMenu.style.display = 'none';
+
+        // Save the selected location to localStorage
+        localStorage.setItem('selectedLocation', selectedLocation);
+    });
+});
+
+function gifts(){
+  window.location.href="https://www.woohoo.in/by-category/entertainment-gift-cards?srsltid=AfmBOooVNAX-0QvlT0P0_wTJIlwsonDYib_vQWusT0o348I27jM9VeQh";
+}
+
+function offer(){
+  window.location.href="https://www.pvrcinemas.com/offers"
+}
+function stream() {
+  window.location.href="https://www.plex.tv/";
+}
+function upcoming(){
+  window.location.href="UpcomingMovies.html"
+}
+
+function log(){
+setTimeout(()=>{
+                alert("Loging out................");
+                 window.location.href="Home.html";
+            },2000)
+    
+        }   
+</script>
+</html>

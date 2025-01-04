@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://cdn-icons-png.freepik.com/256/4108/4108042.png?semt=ais_hybrid" type="image/x-icon">
+    <title>Payment Page</title>
+    <style>
+        body{
+            /* background-color: #D4F6FF; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+        }
+        h3{
+            color: #6A669D;
+            font-size: x-large;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            padding-left: 35.5px;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        ul>div{
+            font-size: large;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 250px;
+            box-shadow: 10px 10px 15px gray;
+            padding: 5px;
+            cursor: pointer;
+        }
+        ul div img{
+            height: 30px;
+        }
+        div:hover{
+            scale: 1.25;
+            gap: 15px;
+        }
+        div{
+            background-color:white ;
+        }
+        button{
+            color: white;
+            background-color: #AB4459;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 2%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        button:hover{
+            color: white;
+            background-color: #A294F9;
+        }
+    </style>
+</head>
+<body>
+    <h3>Online Payment Options</h3>
+        <ul>
+            <div><input type="radio" name="Payment" ><img src="./Images/upi-icon.webp" alt="UPI"> UPI (Pay via any App)</div>
+            <div><input type="radio" name="Payment" ><img src="./Images/creditcard.png" alt="creditCard">Credit/Debit Card</div>
+            <div><input type="radio" name="Payment" ><img src="./Images/paylater.png" alt="PayLater"> Pay Later</div>
+            <div><input type="radio" name="Payment" ><img src="./Images/wallets.png" alt="wallets"> Wallets</div>
+            <div><input type="radio" name="Payment" ><img src="./Images/emi.png" alt="EMI"> EMI</div>
+            <div><input type="radio" name="Payment" ><img src="./Images/netbanking.png" alt="netBanking"> Net Banking</div>
+        </ul>
+
+
+        <button id="payNow">Pay Now</button>
+
+
+    <script>
+        let payBtn=document.getElementById("payNow")
+        let select=document.getElementsByName("Payment")
+        payBtn.style.display="none"
+        select.forEach(x=>{
+            x.addEventListener("click",()=>{
+            payBtn.style.display="block"
+          })
+        })
+
+
+          
+        payBtn.addEventListener("click",()=>{
+            document.body.style.opacity="0.2"
+            setTimeout(()=>{
+                alert("Confirming Tickets")
+                window.location.href="print.html"
+            },2000)
+        })
+    </script>
+</body>
+</html>

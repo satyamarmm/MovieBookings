@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movies Pannel Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+     .movie-card {
+      width: 200px;
+    }
+    .movie-carousel {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .movie-carousel::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for cleaner look */
+    }
+    .movie-carousel > .card {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .movie-card {
+      width: 200px;
+    }
+    .movie-grid {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+    }
+    .movie-grid::-webkit-scrollbar {
+      display: none;
+    }
+    .card-title{
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 15px;
+    }
+
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Cinemas</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Upcomming Movies</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown link
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
+<div class="container my-5">
+    <h2 class="mb-4">Trending in Movie's</h2>
+    <div class="movie-carousel">
+        
+        <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/salaar-cease-fire--part-1.avif" id="imgp" class="card-img-top" alt="Braveheart">
+            <div class="card-body">
+              <h5 class="card-title">Salaar:Cease Fire-Part 1</h5>
+            </div>
+          </div>
+          <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/puspha.avif" id="imgp" class="card-img-top" alt="Titanic">
+            <div class="card-body">
+              <h5 class="card-title">Puspha The Rule</h5>
+            </div>
+          </div>
+          <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/kanguva.avif" id="imgp" class="card-img-top" alt="Beauty and the Beast">
+            <div class="card-body">
+              <h5 class="card-title">Kanguva</h5>
+            </div>
+          </div>
+          <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/venom-the-last-dance-.avif" id="imgp" class="card-img-top" alt="Baahubali">
+            <div class="card-body">
+              <h5 class="card-title">Venom TheLastDance</h5>
+            </div>
+          </div>
+          <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/devara--part-1-.avif" id="imgp" class="card-img-top" alt="After">
+            <div class="card-body">
+              <h5 class="card-title">Devara Part-1</h5>
+            </div>
+          </div>
+          <div class="card movie-card" onclick="reddit()">
+            <img src="./images/homeimgs/mufasa-the-lion-king-.avif" id="imgp" class="card-img-top" alt="Beauty and the Beast">
+            <div class="card-body">
+              <h5 class="card-title">Mufasa The Lion King</h5>
+            </div>
+
+    </div>
+  </div>
+
+  
+
+<div class="container my-5">
+  <h2 class="mb-4">Upcoming Movies</h2>
+  <div class="d-flex justify-content-between align-items-center">
+    <h5></h5>
+    <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#allMoviesModal">View All</a>
+  </div>
+  <!-- Horizontal Scrollable Cards -->
+  <div class="movie-grid">
+    <div class="card movie-card">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MTAsIEphbiAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00311772-cyayfjnueg-portrait.jpg" class="card-img-top" alt="Viduthalai Part 2">
+      <div class="card-body">
+        <h5 class="card-title">Game Changer </h5>
+        <p>Political / Drama</p>
+      
+      </div>
+    </div>
+    <div class="card movie-card">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MjAsIERlYyAyMDI0,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00370266-gyqykrmeht-portrait.jpg" class="card-img-top" alt="Mufasa">
+      <div class="card-body">
+        <h5 class="card-title">UI</h5>
+        <p>Action / Sci_Fi / Thriller</p>
+       
+      </div>
+    </div>
+    <div class="card movie-card">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MTIsIEphbiAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00419964-znvnvdmxpf-portrait.jpg" class="card-img-top" alt="Bottle Radha">
+      <div class="card-body">
+        <h5 class="card-title">Daku Maharaaj</h5>
+        <p>Action / Drama</p>
+       
+      </div>
+    </div>
+    <div class="card movie-card">
+      <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MTAsIEFwciAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00383697-ylkctsgxqw-portrait.jpg" class="card-img-top" alt="Marco">
+      <div class="card-body">
+        <h5 class="card-title">The Raja Saab</h5>
+        <p>Comedy / Horror / Romantic</p>
+       
+      </div>
+    </div>
+    <div class="card movie-card">
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MTAsIEFwciAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00378770-jbmjmnczkv-portrait.jpg">
+        <div class="card-body">
+          <h5 class="card-title">Toxic</h5>
+          <p>Action / Thriller</p>
+    </div>
+  </div>
+  <div class="card movie-card">
+    <img src="./images/homeimgs/kraven.avif">
+    <div class="card-body">
+      <h5 class="card-title">kraven The Hunter</h5>
+      <p>Action / Adventure</p>
+</div>
+</div>
+</div>
+
+<!-- Modal for Viewing All Movies -->
+<div class="modal fade" id="allMoviesModal" tabindex="-1" aria-labelledby="allMoviesModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="allMoviesModalLabel">All Upcoming Movies</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+          <div class="col">
+            <div class="card">
+              <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MiwgT2N0IDIwMjU%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00377351-vqnjygunlr-portrait.jpg" class="card-img-top" alt="Viduthalai Part 2">
+              <div class="card-body">
+                <h5 class="card-title">Kantara: A Legend Chapter-1</h5>
+                <p>Action, Thriller, Drama</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MTksIERlYyAyMDI1,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00407893-ttnuelxaxh-portrait.jpg" class="card-img-top" alt="Mufasa">
+              <div class="card-body">
+                <h5 class="card-title">Avatar:Fire and Ash</h5>
+                <p>Adventure, Drama, Fantasy,Sci Fi</p>
+               
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-MjUsIERlYyAyMDI0,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00395257-tbthfkkffz-portrait.jpg" class="card-img-top" alt="Bottle Radha">
+              <div class="card-body">
+                <h5 class="card-title">RobinHood</h5>
+                <p>Action,crime,Thriller</p>
+          
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-NSwgSnVuIDIwMjU%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00375421-bdbngtvqgt-portrait.jpg" class="card-img-top" alt="Marco">
+              <div class="card-body">
+                <h5 class="card-title">Thug Life</h5>
+                <p>Action, Drama</p>
+        
+            </div>
+          </div>
+          <!-- Add more cards here -->
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="./images/homeimgs/superman.avif" class="card-img-top" alt="Marco">
+            <div class="card-body">
+              <h5 class="card-title">SuperMan</h5>
+              <p>Action,Adventure/Fantasy</p>
+      
+          </div>
+        </div>
+        <!-- Add more cards here -->
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="./images/homeimgs/snowwhite.avif" class="card-img-top" alt="Marco">
+          <div class="card-body">
+            <h5 class="card-title">Disney's snow White</h5>
+            <p>Adventure, Family, Drama</p>
+    
+        </div>
+      </div>
+      <!-- Add more cards here -->
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./images/homeimgs/massjatara.avif" class="card-img-top" alt="Marco">
+        <div class="card-body">
+          <h5 class="card-title">Mass Jathara</h5>
+          <p>Action, Drama</p>
+  
+      </div>
+    </div>
+    <!-- Add more cards here -->
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="./images/homeimgs/ghaati.avif" class="card-img-top" alt="Marco">
+      <div class="card-body">
+        <h5 class="card-title">Ghaati</h5>
+        <p>Action, Crime, Drama</p>
+
+    </div>
+  </div>
+  <!-- Add more cards here -->
+</div>
+<div class="col">
+  <div class="card">
+    <img src="./images/homeimgs/lilo&stitch.avif" class="card-img-top" alt="Marco">
+    <div class="card-body">
+      <h5 class="card-title">Lilo & Stitch</h5>
+      <p>Comedy, Sci-Fi</p>
+
+  </div>
+</div>
+<!-- Add more cards here -->
+</div>
+<div class="col">
+  <div class="card">
+    <img src="./images/homeimgs/og.avif" class="card-img-top" alt="Marco">
+    <div class="card-body">
+      <h5 class="card-title">They Call Him OG</h5>
+      <p>Action, Drama</p>
+
+  </div>
+</div>
+</div>
+
+<div class="col">
+  <div class="card">
+    <img src="./images/homeimgs/ustaad.avif" class="card-img-top" alt="Marco">
+    <div class="card-body">
+      <h5 class="card-title">Ustaad Bhagat singh</h5>
+      <p>Action, Comedy, Drama</p>
+
+  </div>
+</div>
+</div>
+<div class="col">
+  <div class="card">
+    <img src="./images/homeimgs/dragon.avif" class="card-img-top" alt="Marco">
+    <div class="card-body">
+      <h5 class="card-title">How to Train Your Dragon</h5>
+      <p>Action, Family, Fantasy</p>
+
+  </div>
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+footer -->
+gfoiuiodsaic
+;sdousdpbvs;d
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+ function reddit(){
+alert("nee to sign in")
+  }
+</script>
+
+</body>
+</html>

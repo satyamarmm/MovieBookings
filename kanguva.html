@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202411/kanguva-movie-review-14594057-1x1.jpg?VersionId=XaPs24Dr.Q.GPI_lX7Sz69SvAKs.itOl" type="image/x-icon">
+    <title>Kanguva Movie Ticket Booking</title>
+   <style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:url("./Images/kanguva.jpeg");
+background-repeat: no-repeat;
+     
+}
+
+.tickets {
+    width: 550px;
+    height: fit-content;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: rgba(219, 206, 206, 0.5);
+    /* box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25); */
+}
+
+.ticket-selector {
+    background:none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.seats {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.status {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.item {
+    font-size: 14px;
+    position: relative;
+}
+
+.item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    transform: translate(0, -50%);
+    width: 10px;
+    height: 10px;
+    background: rgb(255, 255, 255);
+    outline: 1px solid rgb(120, 120, 120);
+    border-radius: 1px;
+}
+
+.item:nth-child(2)::before {
+    background: rgb(180, 180, 180);
+    outline: none;
+}
+
+.item:nth-child(3)::before {
+    background: #47a3ff;
+    outline: none;
+   
+}
+
+.all-seats {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-gap: 15px;
+    margin: 60px 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+.seat {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 1px;
+    outline: 1px solid rgb(180, 180, 180);
+    cursor: pointer;
+}
+
+.all-seats input:checked+label {
+    background: #47a3ff;
+    outline: none;
+ 
+}
+
+.seat.booked {
+    background: rgb(180, 180, 180);
+    outline: none;
+}
+
+input {
+    display: none;
+}
+
+.seats::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 300px;
+    height: 7px;
+    background: rgb(141, 198, 255);
+    border-radius: 50%/100px 100px 0 0;
+    border-top: 1px solid rgb(180, 180, 180);
+}
+
+.screentext {
+    margin-top: 10px;
+    font-size: 14px;
+    
+}
+
+.timings {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.dates {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dates-item {
+    width: 50px;
+    height: 50px;
+    background: rgb(233, 233, 233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 0;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.day {
+    font-size: 12px;
+}
+
+.times {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.time {
+    font-size: 14px;
+    width: fit-content;
+    padding: 7px 14px;
+    background: rgb(233, 233, 233);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.timings input:checked+label {
+    background: #47a3ff;
+    color: white;
+    
+}
+
+.price {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.total div {
+    display: flex;
+    gap: 4px;
+}
+
+.total span {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.price button {
+    background: rgb(60, 60, 60);
+    color: white;
+    font-size: 14px;
+    padding: 7px 14px;
+    border-radius: 2px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+   </style>
+</head>
+
+<body>
+   
+    <div class="main">
+        <div class="tickets">
+            <div class="ticket-selector">
+                <div class="title">
+                    Kanguva 
+                </div>
+               
+                <div class="seats">
+                    <div class="status">
+                        <div class="item">Available</div>
+                        <div class="item">Booked</div>
+                        <div class="item">Selected</div>
+
+                    </div>
+                    <div class="all-seats">
+                        <input type="checkbox" name="tickets" id="s1">
+                        <label for="s1" class="seat booked"></label>
+                    </div>
+                </div>
+                <div class="screentext">Screen Is Here </div>
+                <div class="timings">
+                    <div class="dates">
+                        <input type="radio" name="date" id="d1" checked>
+                        <label for="d1" class="dates-item">
+                            <div class="day">Mon</div>
+                            <div class="date">12</div>
+                        </label>
+                        <input type="radio" name="date" id="d2">
+                        <label for="d2" class="dates-item">
+                            <div class="day">Tue</div>
+                            <div class="date">13</div>
+                        </label>
+                        <input type="radio" name="date" id="d3">
+                        <label for="d3" class="dates-item">
+                            <div class="day">Wed</div>
+                            <div class="date">14</div>
+                        </label>
+                        <input type="radio" name="date" id="d4">
+                        <label for="d4" class="dates-item">
+                            <div class="day">Thu</div>
+                            <div class="date">15</div>
+                        </label>
+                        <input type="radio" name="date" id="d5">
+                        <label for="d5" class="dates-item">
+                            <div class="day">Fri</div>
+                            <div class="date">16</div>
+                        </label>
+                        <input type="radio" name="date" id="d6">
+                        <label for="d6" class="dates-item">
+                            <div class="day">Sat</div>
+                            <div class="date">17</div>
+                        </label>
+                        <input type="radio" name="date" id="d7">
+                        <label for="d7" class="dates-item">
+                            <div class="day">Sun</div>
+                            <div class="date">18</div>
+                        </label>
+                    </div>
+                    <div class="times">
+                        <input type="radio" name="time" id="t1" checked>
+                        <label for="t1" class="time">11:00 [AM]</label>
+                        <input type="radio" name="time" id="t2">
+                        <label for="t2" class="time">2:30 [PM]</label>
+                        <input type="radio" name="time" id="t3">
+                        <label for="t3" class="time">6:00 [PM]</label>
+                        <input type="radio" name="time" id="t4">
+                        <label for="t4" class="time">9:30 [PM]</label>
+                    </div>
+                </div>
+            </div>
+            <div class="price">
+                <div class="total">
+                    <span><span class="count">0</span> Tickets <span style="padding-left: 100px; font-size: 20px; color: rgb(1, 9, 18); font-weight: 800;"> Ticket Price:145 </span>       </span>
+                    <div>₹ <div class="amount">0</div>
+                    </div>
+                   
+                </div>
+                <button type="button" onclick="booked()">Book</button>
+            </div>
+        </div>
+    </div>
+   
+
+    <script>
+let seats = document.querySelector(".all-seats");
+for (let i = 0; i < 89; i++) {
+    let seatNumber = i + 1; // Seat numbers start from 1
+    let isBooked = Math.floor(Math.random() * 5) === 1; // Randomly mark some seats as booked
+
+    seats.insertAdjacentHTML(
+        "beforeend",
+        `<input type="checkbox" name="tickets" id="s${seatNumber}" ${isBooked ? 'disabled' : ''} />
+        <label for="s${seatNumber}" class="seat ${isBooked ? 'booked' : ''}">${seatNumber}</label>`
+    );
+}
+
+
+let tickets = seats.querySelectorAll("input");
+tickets.forEach((ticket) => {
+    ticket.addEventListener("change", () => {
+        let amount = document.querySelector(".amount").innerHTML;
+        let count = document.querySelector(".count").innerHTML;
+
+        amount = Number(amount);
+        count = Number(count);
+
+        if (ticket.checked) {
+            count += 1;
+            amount += 145;
+        }
+        else {
+            count -= 1;
+            amount -= 145;
+        }
+        document.querySelector(".amount").innerHTML = amount;
+        document.querySelector(".count").innerHTML = count;
+    })
+})
+function booked() {
+    let amount = Number(document.querySelector(".amount").innerHTML);
+    let count = Number(document.querySelector(".count").innerHTML);
+    let selectedDay = document.querySelector('input[name="date"]:checked + label .day').innerText;
+    let selectedDate = document.querySelector('input[name="date"]:checked + label .date').innerText;
+    let selectedTime = document.querySelector('input[name="time"]:checked + label').innerText.trim();
+    let movieTitle = document.querySelector(".title").innerText; // Get the movie title
+
+    // Get selected seat numbers
+    let selectedSeats = [];
+    document.querySelectorAll(".all-seats input:checked").forEach((seat) => {
+        selectedSeats.push(seat.nextElementSibling.innerText); // Seat numbers are stored in label text
+    });
+
+    if (amount > 0) {
+        const cartData = {
+            count: count,
+            amount: amount,
+            day: selectedDay,
+            date: selectedDate,
+            time: selectedTime,
+            seats: selectedSeats,
+            movieTitle: movieTitle, // Add the movie title to the cart data
+        };
+
+        // Save cart details and background URL to localStorage
+        localStorage.setItem("cartData", JSON.stringify(cartData));
+        localStorage.setItem(
+            "backgroundUrl",
+            "./Images/kanguva_r.jpeg"
+        );
+        alert(` Confirming Tickets!.. !\n\n TotalAmount : ${amount}\n TotalCount : ${count}`)
+        // Redirect to the cart page
+        window.location.href = "payment.html";
+    } else {
+        alert("Please select at least one ticket to confirm booking!");
+    }
+}
+
+
+    </script>
+</body>
+
+</html>
+
